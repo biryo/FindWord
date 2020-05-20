@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click For Check</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+var first1 = "baca";
+var second2 = "bc";
+result = cek(first1,second2)
+  if (result = second2.length){
+   alert("Found a Word with first match and include " + second2);
+  }
+}
+
+function cek(first,second) {
+  var strs = first;
+  var strss = second;
+  var str = strs.split("");
+  var str2 = strss.split("");
+  var a;
+  var b;
+  var result = 0;
+  if(str[0] == str2[0])
+  {
+   	for(a=0 ; a < str.length ; a++){ 	
+      for (b=0 ; b < str2.length ; b++){
+          if(str[a] == str2[b]){
+		      	result++
+            break;
+          }
+      }
+    }     
+  }
+  return result
+}
+</script>
+
+</body>
+</html>
