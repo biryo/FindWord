@@ -10,29 +10,31 @@
 
 <script>
 function myFunction() {
-var first1 = "baca";
-var second2 = "bc";
-result = cek(first1,second2)
-  if (result = second2.length){
-   alert("Found a Word with first match and include " + second2);
+var word = "baca";
+var spell = "bca";
+result = cek(word,spell)
+  if (result === spell.length){
+   alert("Found a Word with first match and include " + result);
   }
 }
 
-function cek(first,second) {
-  var strs = first;
-  var strss = second;
-  var str = strs.split("");
-  var str2 = strss.split("");
+function cek(w,s) {
+  var wrd = w;
+  var spl = s;
+  var word = wrd.split("");
+  var spell = spl.split("");
   var a;
   var b;
   var result = 0;
-  if(str[0] == str2[0])
+  if(word[0] === spell[0])
   {
-   	for(a=0 ; a < str.length ; a++){ 	
-      for (b=0 ; b < str2.length ; b++){
-          if(str[a] == str2[b]){
-		      	result++
-            break;
+   	for(a=0 ; a < spell.length ; a++){ 
+      for (b=0 ; b < word.length ; b++){
+          if (a <= b){            
+          	if(spell[a] === word[b]){
+                 result++                 
+             	 break;
+            }
           }
       }
     }     
