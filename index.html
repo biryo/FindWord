@@ -25,6 +25,7 @@ function cek(w,s) {
   var spell = spl.split("");
   var a;
   var b;
+  var c = 0;
   var result = 0;
   if(word[0] === spell[0])
   {
@@ -32,8 +33,11 @@ function cek(w,s) {
       for (b=0 ; b < word.length ; b++){
           if (a <= b){            
           	if(spell[a] === word[b]){
-                 result++                 
-             	 break;
+               if(b >= c){
+                  result++
+                    c = b
+                break;
+                 }
             }
           }
       }
