@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click For Check</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+var word = "bacan";
+var splitk = "baru curi anting";
+// var splitw = splitk.split(" ");
+// var spell = [];
+// for (i = 0 ; i < splitw.length ; i++){
+//   spell[i] = splitw[i].split("");
+// }
+// var spell = [["b","a","r","u"],["c","u","r","i"],["a","n","t","i","n","g"]];
+var result = cek(word,splitk)
+  if (result === word.length){
+   alert("Found a Word with first match and include " + result);
+  }
+}
+
+function cek(w,s) {
+  var wrd = w;
+  var spl = s;
+  var word = wrd.split("");
+  var splitw = s.split(" ");
+  var spell = [];
+  for (i = 0 ; i < splitw.length ; i++){
+    spell[i] = splitw[i].split("");
+  }
+  console.log(spell[0].length)
+  var wa=0;
+  var sa=0;
+  var saa=0;
+  var saac = 0;
+  var r = 0;
+  if(word[0] === spell[0][0])
+  {
+   	while(wa < word.length){
+    	while(saa < spell[sa].length){
+        	if(word[wa] === spell[sa][saa]){
+            	if(saac <= saa){
+                	  r++
+                    wa++
+                    saa++
+                    saac=saa;
+                    break;
+                }                
+            }
+            else{
+              if((spell.length - 1) > sa){                
+                sa++
+                saa=0;
+                saac=0;
+              }
+              else{
+                break;
+              }              
+            }
+        }
+    }    
+  }
+  return r
+}
+</script>
+
+</body>
+</html>
